@@ -1,10 +1,10 @@
 name: 
-  flask-rest-service
+  flask-rest-service-template
 type:
   python-flask
 
 description: 
-  Python Flask REST microservice
+  Jackie's Python Flask REST microservice
 
 parameters:
 
