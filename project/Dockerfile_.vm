@@ -1,0 +1,18 @@
+# Smallest base Python3.5 image available based on alpine
+FROM frolvlad/alpine-python3
+MAINTAINER ${author} <${author_email}>
+
+COPY requirements/prod.txt requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY ${package_name}/ /usr/local/atomist/${package_name}
+
+# this allows us to run the package as a native module below
+COPY ${package_name}/main.py /usr/local/atomist/${package_name}/__main__.py
+
+COPY setup.py /usr/local/atomist
+RUN cd /usr/local/atomist && pip install .
+
+EXPOSE 8080
+
+ENTRYPOINT [ "python3", "-m", "${package_name}" ]

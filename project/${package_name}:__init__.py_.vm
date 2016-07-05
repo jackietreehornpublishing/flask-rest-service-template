@@ -1,0 +1,4 @@
+# -*- coding: utf-8 -*-
+
+__version__ = '${version}'
+__author__ = '${author} <${author_email}>'

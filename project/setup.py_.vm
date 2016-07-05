@@ -1,0 +1,17 @@
+# -*- coding: utf-8 -*-
+try:
+    from setuptools import setup
+except ImportError:
+    from distutils.core import setup
+
+
+setup(name = "$package_name",
+      version = "$version",
+      description = "$description",
+      maintainer = "$author",
+      maintainer_email = "$author_email",
+      url = "$repository_url",
+      packages = ["$package_name"],
+      platforms = ["any"],
+      long_description = "$description"
+     )

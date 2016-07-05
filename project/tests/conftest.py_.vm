@@ -1,0 +1,12 @@
+# -*- coding: utf-8 -*-
+import pytest
+
+from ${package_name}.service import app as _app
+import ${package_name}.views
+
+
+@pytest.fixture(scope='function')
+def app():
+    _app.testing = True
+    return _app.test_client()
+
